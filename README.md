@@ -11,5 +11,5 @@ Legal way = just have a normal job/unemployed
 
 Installation:
 Import esx_computer.sql to your database
-Add 'start esx_computer' to your server.config
+Add 'start esx_computer' to your server.cfg
 Enjoy
