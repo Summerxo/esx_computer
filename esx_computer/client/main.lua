@@ -70,7 +70,8 @@ Citizen.CreateThread(function()
 		if IsControlJustReleased(0, 38) then
 			local chance = math.random(0, 100)
 			local playerPed = PlayerPedId()
-			local coords	= GetEntityCoords(playerPed)				
+			local coords	= GetEntityCoords(playerPed)
+			local coords2	= GetEntityCoords(GetPlayerPed(-1))	
 			loadAnimDict("anim@amb@office@laptops@male@var_a@base@")
 			TaskPlayAnim(GetPlayerPed(-1), "anim@amb@office@laptops@male@var_a@base@", "base", 1.0, 2, -1, 49, 0, 0, 0, 0)
 			FreezeEntityPosition(GetPlayerPed(-1), true)
@@ -79,7 +80,7 @@ Citizen.CreateThread(function()
 			TriggerServerEvent('esx_computer:paydirty', hacks)				
 			FreezeEntityPosition(GetPlayerPed(-1), false)
 		if chance <= caught then
-			TriggerServerEvent('esx_phone:send', "police", 'Fleeca Bank Security Breach Alert: Accounts Compromised! IP/Location of breach has been sent.' , {x = coords.x, y = coords.y, z = coords.z})
+			TriggerServerEvent('esx_phone:send', "police", 'Fleeca Bank Security Breach Alert: Accounts Compromised! IP/Location of breach has been sent.' , true, {x = coords2.x, y = coords2.y, z = coords2.z})
 				end	
 			end			
 		end
